@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Position bottom</title>
+		<link rel="stylesheet" href="./sass/style.css" />
+	</head>
+	<body>
+		<header>header</header>
+
+		<!--  
+			section_name: contenedor de la seccion
+		-->
+		<div class="section_name">
+			<!--  
+				container_name: contenedor encargado del 
+				manejo responsive
+			-->
+			<div class="container_name">
+				<!--  
+					flexbox_name: contenedor definido para
+					la implementacion de flexbox contiene a
+					box_name_img y box_name
+				-->
+				<div class="flexbox_name">
+					<!--  
+						box_name: caja contenedor de 1 content_info
+					-->
+					<div class="box_name">
+						<!--  
+							content_info: contenedor de 1 tag-h1 y
+							1 tag-p
+						-->
+						<section class="content_info">
+							<h1>Titulo de la targeta</h1>
+
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Obcaecati, iste commodi expedita dolore rerum repellat quasi
+								nulla aperiam voluptas debitis vel deleniti esse ipsum eligendi
+								totam est tempore porro dicta.
+							</p>
+						</section>
+					</div>
+
+					<!--  
+						box_name_img: caja contenedor de 1 tag-img
+					-->
+					<div class="box_name_img">
+						<img src="./assets/img/03.jpg" alt="img" />
+					</div>
+				</div>
+
+				<!--  
+					box_boid: contenedor importante para solucionar
+					los problemas del uso de la propiedad css position,
+					la finalidad es crear un contenedor vacio el cual 
+					genera un espacio evitando errores de maquetacion
+				-->
+				<div class="box_boid"></div>
+			</div>
+		</div>
+
+		<footer>footer</footer>
+	</body>
+</html>

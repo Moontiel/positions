@@ -1,0 +1,155 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+header,
+footer {
+	text-align: center;
+	color: #fff;
+	background-color: cadetblue;
+	height: 80px;
+}
+
+/*
+	section_name: le podemos definir margenes o espaciados
+	cuando queremos separar esta seccion de otra 
+*/
+.section_name {
+	padding: 50px 0;
+
+	/*
+		container_name: es el encargado de manejar el 
+		responsive a travez de la propiedad width
+	*/
+	.container_name {
+		margin: 0 auto;
+		// background-color: aqua;
+
+		/*
+			@query 899px <== : modificamos el width de
+			container_name para esta medida
+		*/
+		@media (min-width: 899px) {
+			width: 95%;
+		}
+
+		/*
+			@query 900px ==> : modificamos el width de
+			container_name para esta medida
+		*/
+		@media (min-width: 900px) {
+			width: 80%;
+		}
+
+		/*
+			flexbox_name
+		*/
+		.flexbox_name {
+			/*
+				@query 900px ==> : definimos position: relative para 
+				solucionar el problema que genera definir absolute
+				en un elemento hijo, finalmente implementamos
+				flexbox con su propeidad align-items mas un height
+				que le da altura a la caja permitiendo centrar las
+				cajas verticalmente
+			*/
+			@media (min-width: 900px) {
+				position: relative;
+				display: flex;
+				height: 400px;
+				align-items: center;
+			}
+
+			/*
+				box_name_img: es importante definirle a un contenedor
+				la propiedad height si este contiene dentro una tag-img
+				para luego ajustar la imagen al tamaño del contenedor
+			*/
+			.box_name_img {
+				height: 200px;
+
+				/*
+					@query 600px ==> : cambiamos el height del contenedor
+					box_name_img
+				*/
+				@media (min-width: 600px) {
+					height: 300px;
+				}
+
+				/*
+					@query 900px ==> : definimos position: absolute con sus
+					propiedades right y z-index que nos permiten posicionar 
+					la caja, definir un height y width nos ayuda a sobre
+					poner una caja encima de la otra
+				*/
+				@media (min-width: 900px) {
+					position: absolute;
+					right: 0;
+					z-index: 19;
+					// background-color: chocolate;
+					height: 90%;
+					width: 60%;
+				}
+
+				/*
+					tag-img: es importante definir el width y height 
+					de la img a 100% y object-fit: cover para que esta 
+					se ajuste al tamaño de su contenedor
+				*/
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			/*
+				box_name
+			*/
+			.box_name {
+				background-color: darkcyan;
+
+				/*
+					@query 900px ==> : definimos flexbox y su 
+					propiedad align-items mas un height que nos
+					permite centrar su contenido verticalmente,
+					deifinir un width nos ayuda a sobre poner una caja 
+					encima de la otra 
+				*/
+				@media (min-width: 900px) {
+					display: flex;
+					width: 60%;
+					height: 100%;
+					align-items: center;
+				}
+
+				/*
+					content_info
+				*/
+				.content_info {
+					text-align: center;
+					// background-color: cornflowerblue;
+					color: #fff;
+					padding: 20px 40px;
+
+					/*
+						@query 900px ==> : este width es importante 
+						definirlo para que content_info se iguale al 
+						tamaño de box_name_img 
+					*/
+					@media (min-width: 900px) {
+						width: 67%;
+					}
+
+					p {
+						letter-spacing: 1.2px;
+						line-height: 1.2;
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+	}
+}

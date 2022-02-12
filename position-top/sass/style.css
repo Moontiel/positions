@@ -1,0 +1,158 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header,
+footer {
+  text-align: center;
+  color: #fff;
+  background-color: cadetblue;
+  height: 80px;
+}
+
+/*
+	section_name: le podemos definir margenes o espaciados
+	cuando queremos separar esta seccion de otra 
+*/
+.section_name {
+  padding: 50px 0;
+  /*
+	container_name: es el encargado de manejar el 
+	responsive a travez de la propiedad width
+	*/
+}
+
+.section_name .container_name {
+  margin: 0 auto;
+  /*
+			@query 899px <== : modificamos el width de
+			container_name para esta medida
+		*/
+  /*
+			@query 900px ==> : modificamos el width de
+			container_name para esta medida
+		*/
+  /*
+			box_boid: es importante definir un height a este contenedor
+			para que genere el espaciado que nos ayuda a solucionar 
+			el problema de desmaquetado, el valor de este depende de
+			la posicion inicial de la targeta
+		*/
+  /*
+			flexbox_name: definimos position: relative para 
+			solucionar el problema que genera definir absolute
+			en un elemento hijo, finalmente implementamos
+			flexbox con su propeidad justify-content que nos 
+			permite centrar las cajas box_name y box_name_img
+			horizontalmente
+		*/
+}
+
+@media (min-width: 899px) {
+  .section_name .container_name {
+    width: 95%;
+  }
+}
+
+@media (min-width: 900px) {
+  .section_name .container_name {
+    width: 80%;
+  }
+}
+
+.section_name .container_name .box_boid {
+  background-color: orange;
+  height: 100px;
+}
+
+.section_name .container_name .flexbox_name {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /*
+				box_name: definimos position: absolute con su
+				propiedad top que nos permiten posicionar la
+				caja, tambien definimos flexbox y su 
+				propiedad align-items que nos permite centrar 
+				su contenido verticalmente. Finalmente un width 
+				que nos ayuda a darle tamaño a esta caja
+			*/
+  /*
+				box_name_img: es importante definirle a un contenedor
+				la propiedad height si este contiene dentro una tag-img
+				para luego ajustar la imagen al tamaño del contenedor
+			*/
+}
+
+.section_name .container_name .flexbox_name .box_name {
+  position: absolute;
+  top: -100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: darkcyan;
+  width: 80%;
+  /*
+					@query 700px ==> : modificamos el width de
+					box_name en esta medida responsive
+				*/
+  /*
+					content_info
+				*/
+}
+
+@media (min-width: 700px) {
+  .section_name .container_name .flexbox_name .box_name {
+    width: 70%;
+  }
+}
+
+.section_name .container_name .flexbox_name .box_name .content_info {
+  text-align: center;
+  color: #fff;
+  padding: 20px 40px;
+}
+
+.section_name .container_name .flexbox_name .box_name .content_info p {
+  letter-spacing: 1.2px;
+  line-height: 1.2;
+  margin-top: 20px;
+}
+
+.section_name .container_name .flexbox_name .box_name_img {
+  height: 400px;
+  /*
+					@query 900px ==> : cambiamos el height del contenedor
+					box_name_img
+				*/
+  /*
+					tag-img: es importante definir el width y height 
+					de la img a 100% y object-fit: cover para que esta 
+					se ajuste al tamaño de su contenedor
+				*/
+}
+
+@media (min-width: 900px) {
+  .section_name .container_name .flexbox_name .box_name_img {
+    height: 500px;
+  }
+}
+
+.section_name .container_name .flexbox_name .box_name_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=style.css.map */
